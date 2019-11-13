@@ -1,1 +1,55 @@
-!function(e){var t={};function r(n){if(t[n])return t[n].exports;var o=t[n]={i:n,l:!1,exports:{}};return e[n].call(o.exports,o,o.exports,r),o.l=!0,o.exports}r.m=e,r.c=t,r.d=function(e,t,n){r.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:n})},r.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},r.t=function(e,t){if(1&t&&(e=r(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var n=Object.create(null);if(r.r(n),Object.defineProperty(n,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)r.d(n,o,function(t){return e[t]}.bind(null,o));return n},r.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return r.d(t,"a",t),t},r.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},r.p="",r(r.s=0)}([function(e,t,r){"use strict";r.r(t);const{add:n,multiply:o,divide:u}=new class{add(e,t){return e+t}multiply(e,t){return e*t}divide(e,t){return e/t}};console.log(n(10,1),o(3,2),u(9,3))}]);
+import movieCreator from '/api.js'
+
+async function findMovie(input) {
+    try {
+      const result = await fetch(`http://www.omdbapi.com/?t=${input}&apikey=5c0cf985`);
+      const data = await result.json();
+      console.log(data);
+      displayMovieInfo(data);
+      
+      
+  
+    } catch (err) {
+      console.log(err);
+    }
+  }
+  function getMovie() {
+    const movieName = document.getElementById("movie-name").value;
+    findMovie(movieName);
+  
+  }
+  document.getElementById('movie-form').addEventListener('submit', function(e) {
+      getMovie();
+      e.preventDefault();
+  })
+  
+  function displayMovieInfo (info){
+    const title= info.Title;
+    const rating= info.Year;
+    const release= info.Rated;
+    const genre= info.Genre;
+    const director= info.Director;
+    const movie = new movieCreator(title, rating, release, genre, director);
+    document.getElementById("movie-title").innerText = movie.title;
+    document.getElementById("movie-rating").innerText = movie.rating;
+    document.getElementById("movie-release").innerText = movie.release;
+    document.getElementById("movie-genre").innerText = movie.genre;
+    document.getElementById("movie-director").innerText = movie.director;
+  }
+  
+  function getMovie() {
+    if(document.getElementById("movie-name").value == "") {
+      alert("HEY PUT SOMETHING IN THE BOX");
+    }
+    else {
+  const movieName = document.getElementById("movie-name").value;
+  findMovie(movieName);
+    }
+  }
+  
+  document.getElementById('movie-form').addEventListener('submit', function(e) {
+  getMovie();
+    e.preventDefault();
+  
+  })
+

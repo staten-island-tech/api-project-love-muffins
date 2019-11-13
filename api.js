@@ -45,3 +45,19 @@ function displayMovieInfo (info){
   document.getElementById("movie-genre").innerText = movie.genre;
   document.getElementById("movie-director").innerText = movie.director;
 }
+
+function getMovie() {
+  if(document.getElementById("movie-name").value == "") {
+    alert("HEY PUT SOMETHING IN THE BOX");
+  }
+  else {
+const movieName = document.getElementById("movie-name").value;
+findMovie(movieName);
+  }
+}
+
+document.getElementById('movie-form').addEventListener('submit', function(e) {
+getMovie();
+  e.preventDefault();
+
+})
