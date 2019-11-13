@@ -1,38 +1,54 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>Westeros</title>
-	<link rel="stylesheet"href="style.css">
+	<title>Love Muffins API</title>
+	<link rel="stylesheet" href="style.css">
 	<link href="https://fonts.googleapis.com/css?family=Sarabun" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Acme|Anton|Inconsolata|Open+Sans+Condensed:300" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Acme|Anton|Inconsolata|Open+Sans+Condensed:300"
+		rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+
 <body>
 	<section class="section-1" id="section-1">
 		<header class="main">
-				<div class="top">
-					<div class="logo">
-						<img src="img/logo.jpg">
-					</div>
-				</div>
-				<div class="headers">
-					<h1 class="header">Discover yourself</h1>
-					<h1 class="header-sub">Make a new you</h1>
-				</div>
-				<div class="user-input" id="person-form">
-						<div class="person-form-input">
-							<p class="selection-label">Choose Gender</p>
-							<select name="Gender" class="gender-selection">
-								<option value="Male" class="selection male">Male</option>
-								<option value="Female" class="selection female">Female</option>
-							  </select>
-							<input type="submit" value="Create Person" class="nes-btn" id="person-form">
-						</div>
+			<div class="headers">
+				<h1 class="header">Find a Movie</h1>
+				<h1 class="header-sub">Learn More About Your Favorite Titles</h1>
+			</div>
+			<div class="user-input" id="movie-form">
+				<p class="input-label">Name of Movie</p>
+				<div class="movie-form-input">
+					<form id="movie-form">
+						<input type="text" id="movie-name"> <br />
+						<input type="submit" value="Submit" class="btn" id="movie-form">
 					</form>
 				</div>
+			</div>
+			<div class="display">
+				<div class="title">
+					<h1 id="movie-title"></h1>
+				</div>
+				<div class="rating">
+					<h1 id="movie-rating"></h1>
+				</div>
+				<div class="release">
+					<h1 id="movie-release"></h1>
+				</div>
+				<div class="genre">
+					<h1 id="movie-genre"></h1>
+				</div>
+				<div class="director">
+					<h1 id="movie-director"></h1>
+				</div>
+			</div>
+
 		</header>
 	</section>
 </body>
+<script src="api.js"></script>
+
 </html>
