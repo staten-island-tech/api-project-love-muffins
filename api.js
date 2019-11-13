@@ -11,7 +11,7 @@ class movieCreator{
 
 async function findMovie(input) {
   try {
-    const result = await fetch(`http://www.omdbapi.com/?t=${input}&apikey=5c0cf985`);
+    const result = await fetch(`https://www.omdbapi.com/?t=${input}&apikey=5c0cf985`);
     const data = await result.json();
     console.log(data);
     displayMovieInfo(data);
