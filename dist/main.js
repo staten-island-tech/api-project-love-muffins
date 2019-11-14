@@ -1,4 +1,4 @@
-import movieCreator from '/api.js'
+import movieCreator from 'src/api.js'
 
 async function findMovie(input) {
     try {
